@@ -95,7 +95,7 @@
               $target.find('.stars').text(fortuneResults[i][randNum]['stars']);
               $target.find('.detail').text(fortuneResults[i][randNum]['detail']);
           };
-          $('.result').fadeIn(1000);
+  
         });
       });
 
@@ -105,6 +105,15 @@
           $(this).toggleClass("restart-button");
           $(this).toggleClass("start-button");
           $(this).text("もう一度占う！");
+          $(this).css ({
+            "border-radius": "8px",
+            "border" : "2px solid rgb(111, 111, 236)",
+            "background-color": "rgb(255, 255, 255)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "8px",
+            "box-shadow" : "-2px -2px 2px #999 inset",
+            "width": "150px"
+          });
         });
         $(document).on("click", ".restart-button", function () {
           $(".result").fadeOut(3000);
