@@ -47,8 +47,7 @@
         money: [
           {
             stars: "★★★",
-            detail:
-              "最高の金運です！いつの間にかお金が溜まっているかも・・・？",
+            detail:"最高の金運です！いつの間にかお金が溜まっているかも・・・？",
           },
           {
             stars: "★★",
@@ -62,8 +61,7 @@
         work: [
           {
             stars: "★★★",
-            detail:
-              "最高の仕事運です！いつも以上にチャンスが巡ってくるかも・・・？",
+            detail: "最高の仕事運です！いつも以上にチャンスが巡ってくるかも・・・？",
           },
           {
             stars: "★★",
@@ -71,15 +69,13 @@
           },
           {
             stars: "★",
-            detail:
-              "悪い傾向が見られます！自信過剰にならないように注意しましょう",
+            detail:"悪い傾向が見られます！自信過剰にならないように注意しましょう",
           },
         ],
         health: [
           {
             stars: "★★★",
-            detail:
-              "最高の健康運です！ランニングの距離を伸ばしても良いですね！",
+            detail:"最高の健康運です！ランニングの距離を伸ばしても良いですね！",
           },
           {
             stars: "★★",
@@ -92,24 +88,17 @@
         ],
       };
       $(function () {
-        $(".js-fortune-start").click(function () {
+        $('.js-fortune-start').click (function () {
           for (let i in fortuneResults) {
-            console.log(i);
             const randNum = Math.floor(Math.random() * 3);
-            if (randNum == 0) {
-              $(".stars").text(fortuneResults[i][randNum]["stars"]);
-              $(".detail").text(fortuneResults[i][randNum]["detail"]);
-            } else if (randNum == 1) {
-              $(".stars").text(fortuneResults[i][randNum]["stars"]);
-              $(".detail").text(fortuneResults[i][randNum]["detail"]);
-            } else if (randNum == 2) {
-              $(".stars").text(fortuneResults[i][randNum]["stars"]);
-              $(".detail").text(fortuneResults[i][randNum]["detail"]);
-            }
-          }
-          $(".result").fadeIn(1000);
+            let $target = $('.' + i);
+              $target.find('.stars').text(fortuneResults[i][randNum]['stars']);
+              $target.find('.detail').text(fortuneResults[i][randNum]['detail']);
+          };
+          $('.result').fadeIn(1000);
         });
       });
+
       $(function () {
         $(document).on("click", ".start-button", function () {
           $(".result").fadeIn(1000);
