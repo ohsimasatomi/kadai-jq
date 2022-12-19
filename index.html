@@ -88,7 +88,7 @@
         ],
       };
       $(function () {
-        $('.js-fortune-start').click (function () {
+        $(document).on ('click', '.start-button', function () {
           for (let i in fortuneResults) {
             const randNum = Math.floor(Math.random() * 3);
             let $target = $('.' + i);
@@ -116,7 +116,7 @@
           });
         });
         $(document).on("click", ".restart-button", function () {
-          $(".result").fadeOut(3000);
+          $(".result").fadeOut(1000);
           $(this).toggleClass("restart-button");
           $(this).toggleClass("start-button");
           $(this).text("運勢を占う！");
